@@ -1,0 +1,14 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+git_repository(
+    name = "rules_sml",
+    remote = "https://github.com/BraeWebb/rules_sml.git",
+    commit = "405c0330cc76ec2077070e45b0b03ba8aebd97c0",
+)
+
+load("@rules_sml//sml:sml.bzl", "sml_compiler")
+
+sml_compiler(
+    name = "ml_compiler",
+    release = "Release20200722",
+)
